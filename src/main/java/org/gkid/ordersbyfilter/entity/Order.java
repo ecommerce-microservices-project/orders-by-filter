@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import org.gkid.ordersbyfilter.common.Status;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity(name = "orders")
 public class Order {
@@ -32,5 +33,8 @@ public class Order {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+
+    @Transient
+    private List<OrderItem> items;
 
 }
